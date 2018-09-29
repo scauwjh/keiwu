@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://keiwu.me">
   <title>Java mail 使用学习总结 | Kei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言 最近有个自动发送航班行程单的task，主要是针对出票成功的订单，把对应的邮箱里所收到的跟订单关联的邮件转发给用户。一开始以为就一个转发而已很容易，然后就开始简单撸起代码来了。由于读取的未读邮件，所以选用支持查找是否已读的imap协议，直接上jodd-mail，封装程度比较高代码量比较少。期间遇到不少问题，最后只能用比较底层的java-mail自己封装了，把整个邮件的结构过了一遍。">
+  <meta name="description" content="前言 最近有个自动发送航班行程单的任务，主要是针对出票成功的订单，把对应的邮箱里所收到的跟订单关联的邮件转发给用户。一开始以为就一个转发而已很容易，然后就开始简单撸起代码来了。由于读取的未读邮件，所以选用支持查找是否已读的imap协议，直接上jodd-mail，封装程度比较高代码量比较少。期间遇到不少问题，最后只能用比较底层的java-mail自己封装了，把整个邮件的结构过了一遍。">
 <meta name="keywords" content="技术,笔记,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java mail 使用学习总结">
 <meta property="og:url" content="http://keiwu.me/2016/09/22/160922-javamail/index.html">
 <meta property="og:site_name" content="Kei&#39;s blog">
-<meta property="og:description" content="前言 最近有个自动发送航班行程单的task，主要是针对出票成功的订单，把对应的邮箱里所收到的跟订单关联的邮件转发给用户。一开始以为就一个转发而已很容易，然后就开始简单撸起代码来了。由于读取的未读邮件，所以选用支持查找是否已读的imap协议，直接上jodd-mail，封装程度比较高代码量比较少。期间遇到不少问题，最后只能用比较底层的java-mail自己封装了，把整个邮件的结构过了一遍。">
+<meta property="og:description" content="前言 最近有个自动发送航班行程单的任务，主要是针对出票成功的订单，把对应的邮箱里所收到的跟订单关联的邮件转发给用户。一开始以为就一个转发而已很容易，然后就开始简单撸起代码来了。由于读取的未读邮件，所以选用支持查找是否已读的imap协议，直接上jodd-mail，封装程度比较高代码量比较少。期间遇到不少问题，最后只能用比较底层的java-mail自己封装了，把整个邮件的结构过了一遍。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.pythonclub.org/_media/python-files/mime-type.gif">
-<meta property="og:updated_time" content="2018-01-03T02:59:42.806Z">
+<meta property="og:updated_time" content="2018-09-29T09:02:39.063Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java mail 使用学习总结">
-<meta name="twitter:description" content="前言 最近有个自动发送航班行程单的task，主要是针对出票成功的订单，把对应的邮箱里所收到的跟订单关联的邮件转发给用户。一开始以为就一个转发而已很容易，然后就开始简单撸起代码来了。由于读取的未读邮件，所以选用支持查找是否已读的imap协议，直接上jodd-mail，封装程度比较高代码量比较少。期间遇到不少问题，最后只能用比较底层的java-mail自己封装了，把整个邮件的结构过了一遍。">
+<meta name="twitter:description" content="前言 最近有个自动发送航班行程单的任务，主要是针对出票成功的订单，把对应的邮箱里所收到的跟订单关联的邮件转发给用户。一开始以为就一个转发而已很容易，然后就开始简单撸起代码来了。由于读取的未读邮件，所以选用支持查找是否已读的imap协议，直接上jodd-mail，封装程度比较高代码量比较少。期间遇到不少问题，最后只能用比较底层的java-mail自己封装了，把整个邮件的结构过了一遍。">
 <meta name="twitter:image" content="http://www.pythonclub.org/_media/python-files/mime-type.gif">
 <meta property="og:image" content="http:&#x2F;&#x2F;www.keiwu.me&#x2F;img&#x2F;avatar.jpg">
   
@@ -209,7 +209,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="前言">前言</h3>
-<p>最近有个自动发送航班行程单的task，主要是针对出票成功的订单，把对应的邮箱里所收到的跟订单关联的邮件转发给用户。一开始以为就一个转发而已很容易，然后就开始简单撸起代码来了。由于读取的未读邮件，所以选用支持查找是否已读的imap协议，直接上jodd-mail，封装程度比较高代码量比较少。期间遇到不少问题，最后只能用比较底层的java-mail自己封装了，把整个邮件的结构过了一遍。</p>
+<p>最近有个自动发送航班行程单的任务，主要是针对出票成功的订单，把对应的邮箱里所收到的跟订单关联的邮件转发给用户。一开始以为就一个转发而已很容易，然后就开始简单撸起代码来了。由于读取的未读邮件，所以选用支持查找是否已读的imap协议，直接上jodd-mail，封装程度比较高代码量比较少。期间遇到不少问题，最后只能用比较底层的java-mail自己封装了，把整个邮件的结构过了一遍。</p>
 <a id="more"></a>
 <h3 id="遇到的问题">遇到的问题</h3>
 <p>撸好代码，本地写个test，发现read和send都没什么问题，于是直接挂到线上的测试环境去跑schedule了，然后就挂了。经过很多次的测试（把发件邮箱给搞挂了，被封了），发现了以下问题：</p>
@@ -221,6 +221,7 @@ var _hmt = _hmt || [];
 </a>
 <span class="caption text-muted">邮件内容布局</span>
 </center>
+
       
 
       
