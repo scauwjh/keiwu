@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://keiwu.me">
   <title>Java mail 使用学习总结 | Kei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -17,12 +17,11 @@
 <meta property="og:description" content="前言 最近有个自动发送航班行程单的任务，主要是针对出票成功的订单，把对应的邮箱里所收到的跟订单关联的邮件转发给用户。一开始以为就一个转发而已很容易，然后就开始简单撸起代码来了。由于读取的未读邮件，所以选用支持查找是否已读的imap协议，直接上jodd-mail，封装程度比较高代码量比较少。期间遇到不少问题，最后只能用比较底层的java-mail自己封装了，把整个邮件的结构过了一遍。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.pythonclub.org/_media/python-files/mime-type.gif">
-<meta property="og:updated_time" content="2018-09-29T09:02:39.063Z">
+<meta property="og:updated_time" content="2018-09-29T09:02:39.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java mail 使用学习总结">
 <meta name="twitter:description" content="前言 最近有个自动发送航班行程单的任务，主要是针对出票成功的订单，把对应的邮箱里所收到的跟订单关联的邮件转发给用户。一开始以为就一个转发而已很容易，然后就开始简单撸起代码来了。由于读取的未读邮件，所以选用支持查找是否已读的imap协议，直接上jodd-mail，封装程度比较高代码量比较少。期间遇到不少问题，最后只能用比较底层的java-mail自己封装了，把整个邮件的结构过了一遍。">
 <meta name="twitter:image" content="http://www.pythonclub.org/_media/python-files/mime-type.gif">
-<meta property="og:image" content="http:&#x2F;&#x2F;www.keiwu.me&#x2F;img&#x2F;avatar.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Kei&#39;s blog" type="application/atom+xml">
   
@@ -51,7 +50,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -188,7 +187,7 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-160922-javamail" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-160922-javamail" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -393,14 +392,13 @@ var _hmt = _hmt || [];
       <div class="theme-info">
       <span>Hosted by
         <a href="https://pages.coding.me" rel="external nofollow">Coding Pages</a>
-      </span
-      </div>
+      </span>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
     </div>
   </div>
-</footer>
+</div></footer>
     </div>
     <script>
 	var yiliaConfig = {
@@ -484,10 +482,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
@@ -502,13 +496,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">游记</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
